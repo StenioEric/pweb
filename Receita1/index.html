@@ -4,36 +4,7 @@
 
 <head>
     <title> Receita 1</title>
-
-    <style>
-        div {
-            display: flex;
-            gap: 10px;
-        }
-
-        #customers td,
-        #customers th {
-            border: 1px solid #7d757d;
-            padding: 8px;
-        }
-
-        #customers tr:nth-child(even) {
-            background-color: #ddd7d7;
-        }
-
-        #customers tr:hover {
-            background-color: #dddddd;
-        }
-
-        #customers th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #04AA6D;
-            color: rgb(251, 249, 249);
-        }
-    </style>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -64,34 +35,205 @@
 
     <div>
 
-        <table id="customers" <tr>
-            <th>Bebidas</th>
-            <th>Valor R$</th>
+        <table>
+            <tr>
+                <th>Bebida</th>
+                <th>Valor R$</th>
+                <th>IBU</th>
+                <th>Origem</th>
             </tr>
             <tr>
-                <td>Pitu Limão</td>
-                <td>$30,00</td>
+                <td>Heineken</td>
+                <td>R$ 12,00</td>
+                <td>23</td>
+                <td>Holanda</td>
             </tr>
             <tr>
-                <td>Caranguejo Prata</td>
-                <td>$20,00</td>
+                <td>Stella Artois</td>
+                <td>R$ 14,00</td>
+                <td>25</td>
+                <td>Bélgica</td>
+            </tr>
+            <tr>
+                <td>Corona</td>
+                <td>R$ 10,00</td>
+                <td>19</td>
+                <td>México</td>
+            </tr>
+            <tr>
+                <td>Budweiser</td>
+                <td>R$ 11,00</td>
+                <td>12</td>
+                <td>Estados Unidos</td>
+            </tr>
+            <tr>
+                <td>Guinness</td>
+                <td>R$ 35,00</td>
+                <td>45</td>
+                <td>Irlanda</td>
+            </tr>
+            <tr>
+                <td>Jack Daniel's</td>
+                <td>R$ 150,00</td>
+                <td>0</td>
+                <td>Estados Unidos</td>
+            </tr>
+            <tr>
+                <td>Chivas Regal</td>
+                <td>R$ 180,00</td>
+                <td>0</td>
+                <td>Escócia</td>
+            </tr>
+            <tr>
+                <td>Tequila José Cuervo</td>
+                <td>R$ 75,00</td>
+                <td>0</td>
+                <td>México</td>
+            </tr>
+            <tr>
+                <td>Johnnie Walker Black Label</td>
+                <td>R$ 200,00</td>
+                <td>0</td>
+                <td>Escócia</td>
+            </tr>
+            <tr>
+                <td>Absolut Vodka</td>
+                <td>R$ 90,00</td>
+                <td>0</td>
+                <td>Suécia</td>
+            </tr>
+            <tr>
+                <td>Caipirinha 51</td>
+                <td>R$ 20,00</td>
+                <td>0</td>
+                <td>Brasil</td>
+            </tr>
+            <tr>
+                <td>Skol</td>
+                <td>R$ 5,00</td>
+                <td>10</td>
+                <td>Brasil</td>
+            </tr>
+            <tr>
+                <td>Amstel</td>
+                <td>R$ 8,00</td>
+                <td>18</td>
+                <td>Holanda</td>
+            </tr>
+            <tr>
+                <td>Becks</td>
+                <td>R$ 9,00</td>
+                <td>20</td>
+                <td>Alemanha</td>
+            </tr>
+            <tr>
+                <td>Patagonia Amber Lager</td>
+                <td>R$ 14,00</td>
+                <td>28</td>
+                <td>Argentina</td>
             </tr>
         </table>
 
-        <table id="customers" <tr>
+        <table>
             <tr>
-                <th>Bebidas</th>
-                <th>Valor R$</th>
+                <th>Modelo</th>
+                <th>Data de Lançamento</th>
+                <th>Marca</th>
+                <th>Preço da Época (R$)</th>
             </tr>
             <tr>
-                <td>Vodka Smirnoff</td>
-                <td>$90,00</td>
+                <td>Volkswagen Fusca</td>
+                <td>1959</td>
+                <td>Volkswagen</td>
+                <td>R$ 6.500,00</td>
             </tr>
             <tr>
-                <td>Red Label</td>
-                <td>$120,00</td>
+                <td>Chevrolet Opala</td>
+                <td>1968</td>
+                <td>Chevrolet</td>
+                <td>R$ 9.700,00</td>
+            </tr>
+            <tr>
+                <td>Fiat 147</td>
+                <td>1976</td>
+                <td>Fiat</td>
+                <td>R$ 45.000,00 (cruzados convertidos)</td>
+            </tr>
+            <tr>
+                <td>Ford Corcel</td>
+                <td>1968</td>
+                <td>Ford</td>
+                <td>R$ 7.000,00</td>
+            </tr>
+            <tr>
+                <td>Chevrolet Chevette</td>
+                <td>1973</td>
+                <td>Chevrolet</td>
+                <td>R$ 6.500,00</td>
+            </tr>
+            <tr>
+                <td>Fiat Uno</td>
+                <td>1984</td>
+                <td>Fiat</td>
+                <td>R$ 7.500,00</td>
+            </tr>
+            <tr>
+                <td>Volkswagen Gol</td>
+                <td>1980</td>
+                <td>Volkswagen</td>
+                <td>R$ 8.000,00</td>
+            </tr>
+            <tr>
+                <td>Ford Escort</td>
+                <td>1983</td>
+                <td>Ford</td>
+                <td>R$ 9.500,00</td>
+            </tr>
+            <tr>
+                <td>Chevrolet Monza</td>
+                <td>1982</td>
+                <td>Chevrolet</td>
+                <td>R$ 10.500,00</td>
+            </tr>
+            <tr>
+                <td>Renault Clio</td>
+                <td>1999</td>
+                <td>Renault</td>
+                <td>R$ 15.000,00</td>
+            </tr>
+            <tr>
+                <td>Volkswagen Santana</td>
+                <td>1984</td>
+                <td>Volkswagen</td>
+                <td>R$ 14.500,00</td>
+            </tr>
+            <tr>
+                <td>Fiat Palio</td>
+                <td>1996</td>
+                <td>Fiat</td>
+                <td>R$ 12.000,00</td>
+            </tr>
+            <tr>
+                <td>Ford Ka</td>
+                <td>1997</td>
+                <td>Ford</td>
+                <td>R$ 12.500,00</td>
+            </tr>
+            <tr>
+                <td>Peugeot 206</td>
+                <td>1999</td>
+                <td>Peugeot</td>
+                <td>R$ 16.000,00</td>
+            </tr>
+            <tr>
+                <td>Chevrolet Celta</td>
+                <td>2000</td>
+                <td>Chevrolet</td>
+                <td>R$ 14.800,00</td>
             </tr>
         </table>
+        
+        
 
     </div>
 

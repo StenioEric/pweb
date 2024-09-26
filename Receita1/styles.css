@@ -1,0 +1,25 @@
+
+div {
+    display: flex;
+    gap: 10px;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th{
+    background-color: cadetblue;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {background-color: rgb(164, 157, 172);}
+tr:hover {background-color: rgb(84, 74, 85);}
+
+
+
