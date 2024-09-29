@@ -6,6 +6,13 @@ p.verso{
 }
 
 p.mote{
-    
+
     color: red;
+}
+
+a{
+    color: green;
+    background-color: bisque;
+    border-radius: 25px;
+    font-size: 12px;
 }
