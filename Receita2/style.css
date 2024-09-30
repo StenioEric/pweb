@@ -1,16 +1,16 @@
-p.verso{
+p.verso {
 
     color: blue;
- 
- 
+
+
 }
 
-p.mote{
+p.mote {
 
     color: red;
 }
 
-  /* a:link {
+/* a:link {
     text-decoration: none;
     color: #00F;
    }
@@ -19,17 +19,12 @@ p.mote{
     text-decoration: underline;
     color: #F00;
    } */
-   a:link {
-    background: #B1B1B1;
-    color: #FFF;
+/* a:link {
+    background: #ddd8d8;
     text-decoration: none;
     font-weight: bold;
     border-width: 4px;
-    border-style: solid;
-    border-top-color: #DFDFDF;
-    border-right-color: #666;
-    border-bottom-color: #333;
-    border-left-color: #858585;
+    border-style: solid ;
    
    }
    
@@ -38,8 +33,35 @@ p.mote{
     color: #FFF;
     font-weight: bold;
     border-color: #B1B1B1;
-   }
+   } */
 
-   img{
+div.poeta > img {
     border-radius: 35px;
-   }
+}
+
+
+a:link {
+    color: white;
+    background: #38761d;
+    background: linear-gradient(#6aa84f, #38761d 50%, #6aa84f);
+    border: 1px solid #556699;
+    border-radius: 1000px;
+    padding: 16px 15px;
+    display: inline-block;
+    font: normal bold 15px/1 "Roboto", sans-serif;
+    text-align: center;
+    text-decoration: none;
+}
+
+a:hover {
+    background: #38761d;
+    background: linear-gradient(#6aa84f, #38761d 50%, #6aa84f);
+    border: 1px solid #556699;
+    border-radius: 1000px;
+    padding: 16px 15px;
+    color: #ffffff;
+    display: inline-block;
+    font: normal bold 15px/1 "Roboto", sans-serif;
+    text-align: center;
+
+}
