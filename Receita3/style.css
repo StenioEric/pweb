@@ -1,0 +1,5 @@
+/* Estilo inicial da div de cerveja, invisível */
+#divCerveja {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Transição de fade-in em 1 segundo */
+}

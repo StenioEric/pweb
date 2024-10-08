@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -16,23 +18,22 @@
 </body>
 
 <script>
-    // Variável de controle para alternar entre mostrar e esconder
     let mostrandoCerveja = false;
 
-    // Função para alternar o conteúdo da div
     function carregarDiv() {
         let divCerveja = document.getElementById("divCerveja");
 
         if (mostrandoCerveja) {
-            divCerveja.innerHTML = ''; // Apaga o conteúdo
+            divCerveja.innerHTML = '<h1>Pitu Limão</h1>';  // Limpa o conteúdo
+            divCerveja.style.opacity = 0; 
         } else {
-            divCerveja.innerHTML = `<h1>Guinness</h1>`; // Exibe o nome da cerveja
+            divCerveja.innerHTML = '<h1>Guinness</h1>'; // Exibe o conteúdo
+            divCerveja.style.opacity = 1; // Aplica o fade-in
         }
 
-        mostrandoCerveja = !mostrandoCerveja; // Alterna o estado
+        mostrandoCerveja = !mostrandoCerveja;
     }
 
-    // Seleciona o botão e adiciona o event listener para disparar a função
     let botao = document.getElementById("botaoCarregar");
     botao.addEventListener("click", carregarDiv);
 </script>
