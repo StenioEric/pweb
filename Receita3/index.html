@@ -7,7 +7,7 @@
 
 <body>
 
-    <div id="meu amor">
+    <div id="divBotao">
         <button id="botaoCarregar">Carregando cervejas...</button>
     </div>
 
@@ -16,10 +16,20 @@
 </body>
 
 <script>
-    // Função para carregar o conteúdo na div de cerveja
+    // Variável de controle para alternar entre mostrar e esconder
+    let mostrandoCerveja = false;
+
+    // Função para alternar o conteúdo da div
     function carregarDiv() {
         let divCerveja = document.getElementById("divCerveja");
-        divCerveja.innerHTML = `<h1>Guinness</h1>`;
+
+        if (mostrandoCerveja) {
+            divCerveja.innerHTML = ''; // Apaga o conteúdo
+        } else {
+            divCerveja.innerHTML = `<h1>Guinness</h1>`; // Exibe o nome da cerveja
+        }
+
+        mostrandoCerveja = !mostrandoCerveja; // Alterna o estado
     }
 
     // Seleciona o botão e adiciona o event listener para disparar a função
