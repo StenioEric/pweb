@@ -14,25 +14,29 @@
         <button id="botaoCarregar">Carregando cervejas...</button>
     </div>
 
+    <div id="botao">
+        <button id="botaoOrdena">Ordenar cervejas...</button>
+    </div>
+
+    <div id="botao2">
+        <button id="botaoEmbaralha">Embaralhar Cervejas cervejas...</button>
+    </div>
+
     <script>
-        let cervejas = ["Guinness", "Desperados", "Becks"];
+        // Corrigindo o array de cervejas
+        let cervejas = ["GUiness", "Desesperado", "Beck"];
 
         function transformarTabela(cervejas) {
-            let tabela = `
-            <table>
-                <tr>
-                    <th>Cerveja</th>
-                </tr>`;
-
-            cervejas.forEach(item => {
-                tabela += `
-                <tr>
-                    <td>${item}</td>
-                </tr>`;
-            });
-
-            tabela += `</table>`;
-            return tabela;
+            let tabelaHtml = `
+            <table border="1">
+                <thead>
+                    <tr><th>Cerveja</th></tr>
+                </thead>
+                <tbody>
+                    ${cervejas.map(cerveja => `<tr><td>${cerveja}</td></tr>`).join('')}
+                </tbody>
+            </table>`;
+            return tabelaHtml;
         }
 
         function carregarDiv() {
@@ -43,8 +47,30 @@
             div.innerHTML = tabelaHtml;
         }
 
-        let botao = document.getElementById("botaoCarregar");
-        botao.addEventListener("click", carregarDiv);
+        // Função para ordenar as cervejas
+        function ordenarCervejas() {
+            cervejas.sort();
+            carregarDiv(); // Recarrega a tabela com as cervejas ordenadas
+        }
+
+        function embaralharCervejas() {
+            for (let i = cervejas.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1)); // Gera um índice aleatório
+                [cervejas[i], cervejas[j]] = [cervejas[j], cervejas[i]]; // Troca os elementos
+            }
+            carregarDiv();
+        }
+
+
+        let botaoCarregar = document.getElementById("botaoCarregar");
+        botaoCarregar.addEventListener("click", carregarDiv);
+
+        let botaoOrdena = document.getElementById("botaoOrdena");
+        botaoOrdena.addEventListener("click", ordenarCervejas);
+
+        let botaoEmbaralha = document.getElementById("botaoEmbaralha");
+        botaoEmbaralha.addEventListener("click", embaralharCervejas);
+
     </script>
 
 </body>
