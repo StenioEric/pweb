@@ -1,0 +1,10 @@
+#divCerveja{
+    color: blue;
+    /* text-align: center; */
+    background-color: aquamarine;
+    font-size: 40px;
+    font: normal bold 40px/1 "Roboto", sans-serif;
+    /* border-left-color: azure; */
+    display: flex;
+    justify-content: center;
+}
