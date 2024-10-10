@@ -1,10 +1,28 @@
-#divCerveja{
-    color: blue;
-    /* text-align: center; */
-    background-color: aquamarine;
-    font-size: 40px;
-    font: normal bold 40px/1 "Roboto", sans-serif;
-    /* border-left-color: azure; */
-    display: flex;
-    justify-content: center;
+table {
+    color: rgb(26, 27, 95);
+    background-color: rgb(201, 204, 198);
+    font: 70px cursive;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow:
+        1px 1px 1px red,
+        2px 2px 1px red;
+    border-collapse: collapse; /*Faz as bordas das células colapsarem, permitindo uma tabela mais consistente */
+    width: 1%; /* Faz a tabela ocupar toda a largura disponível */
+}
+
+th {
+    background-color: aqua;
+    border: 2px solid black; /* Define as bordas ao redor do cabeçalho */
+    padding: 10px; /* Espaçamento interno */
+}
+
+td {
+    border: 2px solid black; /* Define bordas ao redor das células */
+    padding: 10px; /* Espaçamento interno para melhor legibilidade */
+    text-align: center; /* Centraliza o texto nas células */
+}
+
+tr:nth-child(even) {
+    background-color: #adabab; /* Altera a cor de fundo das linhas pares para melhorar a legibilidade */
 }
