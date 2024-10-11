@@ -10,17 +10,9 @@
 
 <body>
 
-    <div id="meuAmor">
-        <button id="botaoCarregar">Carregando cervejas...</button>
-    </div>
-
-    <div id="botao">
-        <button id="botaoOrdena">Ordenar cervejas...</button>
-    </div>
-
-    <div id="botao2">
-        <button id="botaoEmbaralha">Embaralhar Cervejas cervejas...</button>
-    </div>
+    <a href="#" id="linkCarregar">Carregando cervejas...</a>
+    <a href="#" id="linkOrdena">Ordenar Cervejas</a>
+    <a href="#" id="linkEmbaralha">Embaralhar Cervejas</a>
 
     <script>
         // Corrigindo o array de cervejas
@@ -28,20 +20,20 @@
 
         const transformarTabela = (cervejas) => {
             let tabelaHtml = `
-    <table border="1">
-        <thead>
-            <tr><th>Cerveja</th></tr>
-        </thead>
-        <tbody>
-            ${cervejas.map(cerveja => `<tr><td>${cerveja}</td></tr>`).join('')}
-        </tbody>
-    </table>`;
+                <table border="1">
+                    <thead>
+                        <tr><th>Cerveja</th></tr>
+                    </thead>
+                    <tbody>
+                        ${cervejas.map(cerveja => `<tr><td>${cerveja}</td></tr>`).join('')}
+                    </tbody>
+                </table>`;
             return tabelaHtml;
         };
 
 
         const carregarDiv = cervs => {
-            let div = document.getElementById("meuAmor");
+            let div = document.getElementById("linkCarregar");
 
             let tabelaHtml = transformarTabela(cervs);
 
@@ -63,14 +55,25 @@
         }
 
 
-        let botaoCarregar = document.getElementById("botaoCarregar");
-        botaoCarregar.addEventListener("click", () => carregarDiv(cervejas));
+        let linkCarregar = document.getElementById("linkCarregar");
 
-        let botaoOrdena = document.getElementById("botaoOrdena");
-        botaoOrdena.addEventListener("click", () => ordenarCervejas(cervejas));
+        linkCarregar.addEventListener("click", (event) => {
+            event.preventDefault(); // Evita que o link recarregue a página
+            carregarDiv(cervejas); // Chama a função carregarDiv
+        });
 
-        let botaoEmbaralha = document.getElementById("botaoEmbaralha");
-        botaoEmbaralha.addEventListener("click", () => embaralharCervejas(cervejas));
+        let linkOrdena = document.getElementById("linkOrdena");
+        linkOrdena.addEventListener("click", (event) => {
+            event.preventDefault(); // Evita o comportamento padrão de navegação do link
+            ordenarCervejas(cervejas); // Chama a função ordenarCervejas
+        });
+
+        let linkEmbaralha = document.getElementById("linkEmbaralha");
+        linkEmbaralha.addEventListener("click", (event) => {
+            event.preventDefault(); // Evita o comportamento padrão de navegação do link
+            embaralharCervejas(cervejas); // Chama a função embaralharCervejas
+        });
+
 
     </script>
 
