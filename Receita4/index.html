@@ -24,52 +24,53 @@
 
     <script>
         // Corrigindo o array de cervejas
-        let cervejas = ["GUiness", "Desesperado", "Beck"];
+        let cervejas = ["Guiness", "Desesperado", "Beck"];
 
-        function transformarTabela(cervejas) {
+        const transformarTabela = (cervejas) => {
             let tabelaHtml = `
-            <table border="1">
-                <thead>
-                    <tr><th>Cerveja</th></tr>
-                </thead>
-                <tbody>
-                    ${cervejas.map(cerveja => `<tr><td>${cerveja}</td></tr>`).join('')}
-                </tbody>
-            </table>`;
+    <table border="1">
+        <thead>
+            <tr><th>Cerveja</th></tr>
+        </thead>
+        <tbody>
+            ${cervejas.map(cerveja => `<tr><td>${cerveja}</td></tr>`).join('')}
+        </tbody>
+    </table>`;
             return tabelaHtml;
-        }
+        };
 
-        function carregarDiv() {
+
+        const carregarDiv = cervs => {
             let div = document.getElementById("meuAmor");
 
-            let tabelaHtml = transformarTabela(cervejas);
+            let tabelaHtml = transformarTabela(cervs);
 
             div.innerHTML = tabelaHtml;
         }
 
         // Função para ordenar as cervejas
-        function ordenarCervejas() {
-            cervejas.sort();
-            carregarDiv(); // Recarrega a tabela com as cervejas ordenadas
+        const ordenarCervejas = itemOrdenado => {
+            itemOrdenado.sort();
+            carregarDiv(itemOrdenado); // Recarrega a tabela com as cervejas ordenadas
         }
 
-        function embaralharCervejas() {
-            for (let i = cervejas.length - 1; i > 0; i--) {
+        const embaralharCervejas = itemEmbaralhado => {
+            for (let i = itemEmbaralhado.length - 1; i > 0; i--) {
                 let j = Math.floor(Math.random() * (i + 1)); // Gera um índice aleatório
                 [cervejas[i], cervejas[j]] = [cervejas[j], cervejas[i]]; // Troca os elementos
             }
-            carregarDiv();
+            carregarDiv(itemEmbaralhado);
         }
 
 
         let botaoCarregar = document.getElementById("botaoCarregar");
-        botaoCarregar.addEventListener("click", carregarDiv);
+        botaoCarregar.addEventListener("click", () => carregarDiv(cervejas));
 
         let botaoOrdena = document.getElementById("botaoOrdena");
-        botaoOrdena.addEventListener("click", ordenarCervejas);
+        botaoOrdena.addEventListener("click", () => ordenarCervejas(cervejas));
 
         let botaoEmbaralha = document.getElementById("botaoEmbaralha");
-        botaoEmbaralha.addEventListener("click", embaralharCervejas);
+        botaoEmbaralha.addEventListener("click", () => embaralharCervejas(cervejas));
 
     </script>
 
