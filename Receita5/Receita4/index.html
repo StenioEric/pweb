@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Receita 5</title>
+</head>
+
+<body>
+
+    <div><button id="botaoCarregar">Carregando cervejas...</button></div>
+
+    <div id="meu amor"></div>
+
+</body>
+
+
+<script>
+
+    let cervejas = ["Guiness", "Desperados", "Becks"]
+
+    //function carregar(){      
+
+    const carregarDiv = cervs => {
+        const div = document.getElementById("meu amor");
+        const cervejasHtml = cervs.map(item => `<h1>${item}</h1>`); // Usando o parâmetro cervs no map
+        div.innerHTML = `${cervejasHtml.join("\n")}`;
+    }
+
+
+
+
+    let botao = document.getElementById("botaoCarregar");
+
+    botao.addEventListener("click", () => carregarDiv(cervejas));
+
+</script>
+
+</html>
