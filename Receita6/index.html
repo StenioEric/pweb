@@ -12,7 +12,7 @@
 
     <div id="cervejasDiv"></div>
     <div><button id="botaoCarregar">Carregando cervejas...</button></div>
-    
+
 </body>
 
 <script>
@@ -23,7 +23,11 @@
 
             name: "Guiness",
 
-            alcohol: "10%"
+            alcohol: "10%",
+
+            ibu: "35",
+
+            style: "Pilsen"
 
         },
 
@@ -31,15 +35,22 @@
 
             name: "Desperados",
 
-            alcohol: "6%"
+            alcohol: "6%",
+            
+            ibu: "20",
 
+            style: "Apa"
         },
 
         {
 
             name: "Becks",
 
-            alcohol: "5%"
+            alcohol: "5%",
+
+            ibu: "55",
+
+            style: "Lager"
 
         }
 
@@ -56,6 +67,8 @@
                 <tr>
                     <th>Nome</th>
                     <th>Álcool</th>
+                    <th>IBU</th>
+                    <th>Style</th>
                 </tr>
             </thead>
             <tbody>
@@ -63,6 +76,8 @@
                     <tr>
                         <td>${item['name']}</td>
                         <td>${item['alcohol']}</td>
+                        <td>${item['ibu']}</td>
+                        <td>${item['style']}</td>
                     </tr>
                 `).join('')}
             </tbody>
