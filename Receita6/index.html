@@ -36,7 +36,7 @@
             name: "Desperados",
 
             alcohol: "6%",
-            
+
             ibu: "20",
 
             style: "Apa"
@@ -57,7 +57,7 @@
     ]
 
     //cs é um array de cervejas
-    const carregarDiv = (cs,id = "cervejasDiv") => {
+    const carregarDiv = (cs, id = "cervejasDiv", headers = ["Nome", "Álcool", "Estilo", "Amargor"]) => {
         const div = document.getElementById(id);
 
         // Cria o cabeçalho da tabela
@@ -65,10 +65,9 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>Álcool</th>
-                    <th>IBU</th>
-                    <th>Style</th>
+                    ${headers.map(item => `
+                        <th>${item}</th>
+                `).join('')}
                 </tr>
             </thead>
             <tbody>
@@ -82,7 +81,7 @@
                 `).join('')}
             </tbody>
         </table>
-    `;
+        `;
 
         div.innerHTML = tabelaHtml; // Insere a tabela no div
     }
