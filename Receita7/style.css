@@ -1,0 +1,39 @@
+table {
+    width: 80%; /* Ajuste a largura conforme necessário */
+    border-collapse: collapse;
+    margin: 20px auto; /* Centraliza a tabela na página */
+    border: 1px solid #ddd; /* Define a borda da tabela */
+    border-radius: 10px; /* Arredonda os cantos da borda */
+    overflow: hidden; /* Garante que o arredondamento funcione corretamente */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #79c489;
+}
+
+tr:nth-child(odd) {
+    background-color: #adabab; /* Altera a cor de fundo das linhas ímpares para melhorar a legibilidade */
+}
+
+#botaoCarregar {
+    display: block; /* Altera para block para usar o margin auto */
+    margin: 20px auto; /* Centraliza o botão com a tabela */
+    padding: 10px 20px; /* Adiciona espaço interno (padding) */
+    background-color: #4CAF50; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Arredonda as bordas */
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para pointer (mãozinha) */
+    transition: background-color 0.3s ease; /* Adiciona transição suave ao hover */
+}
+
+#botaoCarregar:hover {
+    background-color: #45a049; /* Muda a cor de fundo ao passar o mouse */
+}
