@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Receita 6</title>
+</head>
+
+<body>
+
+    <div><button id="botaoCarregar">Carregando cervejas...</button></div>
+
+    <div id="cervejasDiv"></div>
+
+</body>
+
+<script>
+
+    let cervejas = [
+
+        {
+
+            name: "Guiness",
+
+            alcohol: "10%"
+
+        },
+
+        {
+
+            name: "Desperados",
+
+            alcohol: "6%"
+
+        },
+
+        {
+
+            name: "Becks",
+
+            alcohol: "5%"
+
+        }
+
+    ]
+
+    //cs é um array de cervejas
+    const carregarDiv = cs => {
+        const div = document.getElementById("cervejasDiv");
+
+        // Cria o cabeçalho da tabela
+        let tabelaHtml = `
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Álcool</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${cs.map(item => `
+                    <tr>
+                        <td>${item['name']}</td>
+                        <td>${item['alcohol']}</td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        </table>
+    `;
+
+        div.innerHTML = tabelaHtml; // Insere a tabela no div
+    }
+
+    let botao = document.getElementById("botaoCarregar");
+
+    botao.addEventListener("click", () => carregarDiv(cervejas));
+
+
+</script>
+
+</html>
