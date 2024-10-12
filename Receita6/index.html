@@ -57,34 +57,34 @@
     ]
 
     //cs é um array de cervejas
-    const carregarDiv = (cs, id = "cervejasDiv", headers = ["Nome", "Álcool", "Estilo", "Amargor"]) => {
-        const div = document.getElementById(id);
+    const carregarDiv = (cs, id = "cervejasDiv", headers = ["Nome", "Álcool", "Estilo", "Amargor"], properties = ["name", "alcohol", "ibu", "style"]) => {
+    const div = document.getElementById(id);
 
-        // Cria o cabeçalho da tabela
-        let tabelaHtml = `
-        <table border="1">
-            <thead>
+    // Cria o cabeçalho da tabela
+    let tabelaHtml = `
+    <table border="1">
+        <thead>
+            <tr>
+                ${headers.map(header => `
+                    <th>${header}</th> <!-- Cabeçalhos -->
+                `).join('')}
+            </tr>
+        </thead>
+        <tbody>
+            ${cs.map(item => `
                 <tr>
-                    ${headers.map(item => `
-                        <th>${item}</th>
-                `).join('')}
+                    ${properties.map(prop => `
+                        <td>${item[prop]}</td> <!-- Acesso dinâmico aos dados -->
+                    `).join('')}
                 </tr>
-            </thead>
-            <tbody>
-                ${cs.map(item => `
-                    <tr>
-                        <td>${item['name']}</td>
-                        <td>${item['alcohol']}</td>
-                        <td>${item['ibu']}</td>
-                        <td>${item['style']}</td>
-                    </tr>
-                `).join('')}
-            </tbody>
-        </table>
-        `;
+            `).join('')}
+        </tbody>
+    </table>
+    `;
 
-        div.innerHTML = tabelaHtml; // Insere a tabela no div
-    }
+    div.innerHTML = tabelaHtml; // Insere a tabela no div
+}
+
 
     let botao = document.getElementById("botaoCarregar");
 
