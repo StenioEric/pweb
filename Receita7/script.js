@@ -1,10 +1,10 @@
 let cervejas = []
 
 //cs é um array de cervejas
-const carregarDiv = (data, id = "cervejasDiv", headers = [], properties = []) => {
+const carregarDiv = (tamnh, id = "cervejasDiv", headers = [], properties = []) => {
     const div = document.getElementById(id);
 
-    if (!data || data.length === 0 || headers.length !== properties.length) {
+    if (!tamnh || tamnh.length === 0 || headers.length !== properties.length) {
         div.innerHTML = "Nenhum dado disponível ou parâmetros incorretos";
         return;
     }
@@ -17,7 +17,7 @@ const carregarDiv = (data, id = "cervejasDiv", headers = [], properties = []) =>
                 </tr>
             </thead>
             <tbody>
-                ${data.map(item => `
+                ${tamnh.map(item => `
                     <tr>
                         ${properties.map(prop => `<td>${item[prop]}</td>`).join('')}
                     </tr>
