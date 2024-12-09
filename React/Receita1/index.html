@@ -4,20 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Receita 1</title>
+    <title>Tabela de Carros</title>
   </head>
 
   <body>
     <div id="app"></div>
 
     <script src="libs/react.js"></script>
-
     <script src="libs/react-dom.js"></script>
 
     <script>
       ReactDOM.render(
-        React.createElement("h1", null, "React!"),
-
+        React.createElement(
+          "table",
+          { border: "1", style: {width: "70%", margin: "0 auto", textAlign: "center"} },
+          React.createElement(
+            "thead",
+            null,
+            React.createElement(
+              "tr",
+              null,
+              React.createElement("th", null, "Modelo"),
+              React.createElement("th", null, "Marca"),
+              React.createElement("th", null, "Ano")
+            )
+          ),
+          React.createElement(
+            "tbody",
+            null,
+            React.createElement(
+              "tr",
+              null,
+              React.createElement("td", null, "Civic"),
+              React.createElement("td", null, "Honda"),
+              React.createElement("td", null, "2022")
+            ),
+            React.createElement(
+              "tr",
+              null,
+              React.createElement("td", null, "Corolla"),
+              React.createElement("td", null, "Toyota"),
+              React.createElement("td", null, "2023")
+            ),
+            React.createElement(
+              "tr",
+              null,
+              React.createElement("td", null, "Model 3"),
+              React.createElement("td", null, "Tesla"),
+              React.createElement("td", null, "2021")
+            )
+          )
+        ),
         document.getElementById("app")
       );
     </script>
