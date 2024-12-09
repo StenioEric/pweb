@@ -16,13 +16,9 @@
 
     <script type="text/babel">
       // Função Cabecalho
-      const Cabecalho = () => {
-        return React.createElement(
-          "h1",
-          { style: { textAlign: "center", color: "darkblue", marginBottom: "20px" } },
-          "Minha tabela de carros"
-        );
-      };
+      function Cabecalho() {
+        return <h1>Minha tabela de carros</h1>;
+      }
 
       // Array fixo de objetos JSON
       const carros = [
@@ -30,66 +26,63 @@
         { modelo: "Corolla", marca: "Toyota", ano: 2023 },
         { modelo: "Model 3", marca: "Tesla", ano: 2021 },
         { modelo: "Onix", marca: "Chevrolet", ano: 2020 },
+        { modelo: "Corsa do meu Pai", marca: "Chevrolet", ano: 2023 },
       ];
 
-      // Função TabelaCarros que renderiza a tabela com base no array
-      const TabelaCarros = () => {
-        return React.createElement(
-          "table",
-          { border: "1", style: { width: "70%", margin: "0 auto", textAlign: "center" } },
-          React.createElement(
-            "thead",
-            null,
-            React.createElement(
-              "tr",
-              null,
-              React.createElement("th", null, "Modelo"),
-              React.createElement("th", null, "Marca"),
-              React.createElement("th", null, "Ano")
-            )
-          ),
-          React.createElement(
-            "tbody",
-            null,
-            carros.map((carro, index) =>
-              React.createElement(
-                "tr",
-                { key: index },
-                React.createElement("td", null, carro.modelo),
-                React.createElement("td", null, carro.marca),
-                React.createElement("td", null, carro.ano)
-              )
-            )
-          )
+      // Função TabelaCarros
+      function TabelaCarros() {
+        return (
+          <div style={{ textAlign: "center", marginTop: "20px" }}>
+            <table>
+              <thead>
+                <tr>
+                  <th>Modelo</th>
+                  <th>Marca</th>
+                  <th>Ano</th>
+                </tr>
+              </thead>
+              <tbody>
+                {carros.map((carro, index) => (
+                  <tr key={index}>
+                    <td>{carro.modelo}</td>
+                    <td>{carro.marca}</td>
+                    <td>{carro.ano}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         );
-      };
+      }
 
-      // Função handleClick para renderizar a tabela ao clicar no botão
-      const handleClick = () => {
-        ReactDOM.render(
-          React.createElement(
-            "div",
-            null,
-            React.createElement(Cabecalho),
-            React.createElement(TabelaCarros)
-          ),
-          document.getElementById("app")
+      // Função App que renderiza o botão e chama a tabela
+      function App() {
+        const [showTabela, setShowTabela] = React.useState(false);
+
+        const handleButtonClick = () => {
+          setShowTabela(true);
+        };
+
+        return (
+          <div style={{ textAlign: "center" }}>
+            <Cabecalho />
+            <button
+              onClick={handleButtonClick}
+              style={{
+                padding: "10px 20px",
+                fontSize: "16px",
+                margin: "20px",
+              }}
+            >
+              Mostrar Tabela
+            </button>
+            {showTabela && <TabelaCarros />}
+          </div>
         );
-      };
+      }
 
-      // Renderizando apenas o botão inicialmente
-      ReactDOM.render(
-        React.createElement(
-          "div",
-          { style: { textAlign: "center", marginTop: "20px" } },
-          React.createElement(
-            "button",
-            { onClick: handleClick, style: { padding: "10px 20px", fontSize: "16px" } },
-            "Mostrar Tabela"
-          )
-        ),
-        document.getElementById("app")
-      );
+      // Renderiza o componente App
+      ReactDOM.render(<App />, document.getElementById("app"));
     </script>
   </body>
 </html>
