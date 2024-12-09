@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Receita 3</title>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script src="libs/react.js"></script>
+    <script src="libs/react-dom.js"></script>
+    <script src="libs/babel.js"></script>
+
+    <script type="text/babel">
+      // Função Cabecalho
+      function Cabecalho() {
+        return <h1>Minha tabela de carros</h1>;
+      }
+
+      // Array fixo de objetos JSON
+      const carros = [
+        { modelo: "Civic", marca: "Honda", ano: 2022 },
+        { modelo: "Corolla", marca: "Toyota", ano: 2023 },
+        { modelo: "Model 3", marca: "Tesla", ano: 2021 },
+        { modelo: "Onix", marca: "Chevrolet", ano: 2020 },
+        { modelo: "Corsa do meu Pai", marca: "Chevrolet", ano: 2023 },
+      ];
+
+      // Função TabelaCarros
+      function TabelaCarros() {
+        return (
+          <div style={{ textAlign: "center", marginTop: "20px" }}>
+            <table>
+              <thead>
+                <tr>
+                  <th>Modelo</th>
+                  <th>Marca</th>
+                  <th>Ano</th>
+                </tr>
+              </thead>
+              <tbody>
+                {carros.map((carro, index) => (
+                  <tr key={index}>
+                    <td>{carro.modelo}</td>
+                    <td>{carro.marca}</td>
+                    <td>{carro.ano}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      // Função App que renderiza o botão e chama a tabela
+      function App() {
+        const [showTabela, setShowTabela] = React.useState(false);
+
+        const handleButtonClick = () => {
+          setShowTabela(true);
+        };
+
+        return (
+          <div style={{ textAlign: "center" }}>
+            <Cabecalho />
+            <button
+              onClick={handleButtonClick}
+              style={{
+                padding: "10px 20px",
+                fontSize: "16px",
+                margin: "20px",
+              }}
+            >
+              Mostrar Tabela
+            </button>
+            {showTabela && <TabelaCarros />}
+          </div>
+        );
+      }
+
+      // Renderiza o componente App
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>
