@@ -15,19 +15,81 @@
     <script src="libs/babel.js"></script>
 
     <script type="text/babel">
-            ReactDOM.render(
-              <div id="app">
-                <table id="tabela" border="1">
-                    <thead>
-                      <tr><th>Nome</th><th>Marca</th></tr>
-                    </thead>
-                    <tbody>
-                      <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
-                    </tbody>
-                </table>
-              </div>
-              ,
-            document.getElementById("app"));
+      // Função Cabecalho
+      const Cabecalho = () => {
+        return React.createElement(
+          "h1",
+          { style: { textAlign: "center", color: "darkblue", marginBottom: "20px" } },
+          "Minha tabela de carros"
+        );
+      };
+
+      // Array fixo de objetos JSON
+      const carros = [
+        { modelo: "Civic", marca: "Honda", ano: 2022 },
+        { modelo: "Corolla", marca: "Toyota", ano: 2023 },
+        { modelo: "Model 3", marca: "Tesla", ano: 2021 },
+        { modelo: "Onix", marca: "Chevrolet", ano: 2020 },
+      ];
+
+      // Função TabelaCarros que renderiza a tabela com base no array
+      const TabelaCarros = () => {
+        return React.createElement(
+          "table",
+          { border: "1", style: { width: "70%", margin: "0 auto", textAlign: "center" } },
+          React.createElement(
+            "thead",
+            null,
+            React.createElement(
+              "tr",
+              null,
+              React.createElement("th", null, "Modelo"),
+              React.createElement("th", null, "Marca"),
+              React.createElement("th", null, "Ano")
+            )
+          ),
+          React.createElement(
+            "tbody",
+            null,
+            carros.map((carro, index) =>
+              React.createElement(
+                "tr",
+                { key: index },
+                React.createElement("td", null, carro.modelo),
+                React.createElement("td", null, carro.marca),
+                React.createElement("td", null, carro.ano)
+              )
+            )
+          )
+        );
+      };
+
+      // Função handleClick para renderizar a tabela ao clicar no botão
+      const handleClick = () => {
+        ReactDOM.render(
+          React.createElement(
+            "div",
+            null,
+            React.createElement(Cabecalho),
+            React.createElement(TabelaCarros)
+          ),
+          document.getElementById("app")
+        );
+      };
+
+      // Renderizando apenas o botão inicialmente
+      ReactDOM.render(
+        React.createElement(
+          "div",
+          { style: { textAlign: "center", marginTop: "20px" } },
+          React.createElement(
+            "button",
+            { onClick: handleClick, style: { padding: "10px 20px", fontSize: "16px" } },
+            "Mostrar Tabela"
+          )
+        ),
+        document.getElementById("app")
+      );
     </script>
   </body>
 </html>
