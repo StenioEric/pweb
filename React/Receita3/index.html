@@ -1,88 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Receita 3</title>
+    <title>ReceitaReact - 2</title>
   </head>
 
   <body>
     <div id="app"></div>
 
     <script src="libs/react.js"></script>
+
     <script src="libs/react-dom.js"></script>
+
     <script src="libs/babel.js"></script>
 
     <script type="text/babel">
-      // Função Cabecalho
-      function Cabecalho() {
-        return <h1>Minha tabela de carros</h1>;
+      class Cabecalho extends React.Component {
+        render() {
+          return (
+            <header>
+              <h1>{this.props.titulo}</h1>
+              <h3>Venha prestigiar nossas bebidas</h3>
+            </header>
+          )
+        }
       }
 
-      // Array fixo de objetos JSON
-      const carros = [
-        { modelo: "Civic", marca: "Honda", ano: 2022 },
-        { modelo: "Corolla", marca: "Toyota", ano: 2023 },
-        { modelo: "Model 3", marca: "Tesla", ano: 2021 },
-        { modelo: "Onix", marca: "Chevrolet", ano: 2020 },
-        { modelo: "Corsa do meu Pai", marca: "Chevrolet", ano: 2023 },
-      ];
-
-      // Função TabelaCarros
-      function TabelaCarros() {
-        return (
-          <div style={{ textAlign: "center", marginTop: "20px" }}>
-            <table>
-              <thead>
-                <tr>
-                  <th>Modelo</th>
-                  <th>Marca</th>
-                  <th>Ano</th>
-                </tr>
-              </thead>
-              <tbody>
-                {carros.map((carro, index) => (
-                  <tr key={index}>
-                    <td>{carro.modelo}</td>
-                    <td>{carro.marca}</td>
-                    <td>{carro.ano}</td>
+      class TabelaBebidas extends React.Component {
+        render() {
+          return (
+            <div>
+              <table id="tabela" border="1">
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Marca</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        );
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Havana</td>
+                    <td>Engenho Anísio Santiago</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
       }
 
-      // Função App que renderiza o botão e chama a tabela
-      function App() {
-        const [showTabela, setShowTabela] = React.useState(false);
-
-        const handleButtonClick = () => {
-          setShowTabela(true);
-        };
-
-        return (
-          <div style={{ textAlign: "center" }}>
-            <Cabecalho />
-            <button
-              onClick={handleButtonClick}
-              style={{
-                padding: "10px 20px",
-                fontSize: "16px",
-                margin: "20px",
-              }}
-            >
-              Mostrar Tabela
-            </button>
-            {showTabela && <TabelaCarros />}
-          </div>
-        );
+      class Rodape extends React.Component {
+        render() {
+          return (
+            <footer>
+              <h2>Stênio Corporation</h2>
+              <p>Beba mais menina beba</p>
+            </footer>
+          )
+        }
       }
 
-      // Renderiza o componente App
-      ReactDOM.render(<App />, document.getElementById("app"));
+      ReactDOM.render(
+        <div>
+          <Cabecalho titulo="Tabela de Cana" />
+          <TabelaBebidas />
+          <Rodape />
+        </div>,
+        document.getElementById("app")
+      );
     </script>
   </body>
 </html>
