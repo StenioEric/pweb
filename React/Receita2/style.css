@@ -1,16 +1,18 @@
 table {
     width: 80%; /* Ajuste a largura conforme necessário */
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
     margin: 20px auto; /* Centraliza a tabela na página */
-    border: 1px solid #ddd; /* Define a borda da tabela */
+    border: 1px solid #151414; /* Define a borda da tabela */
     border-radius: 10px; /* Arredonda os cantos da borda */
     overflow: hidden; /* Garante que o arredondamento funcione corretamente */
 }
 
 th, td {
+    height: 80px;
     padding: 10px;
     text-align: left;
-    border: 1px solid #ddd;
+    border: 1px solid #121111;
+    font-size: 30px;
 }
 
 th {
