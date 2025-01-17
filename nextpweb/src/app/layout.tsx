@@ -1,19 +1,10 @@
-export const metadata = {
-  title: "Receitas Incríveis",
-  description: "Descubra receitas deliciosas!",
-};
-
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body
-        style={{
-          margin: 0,
-          padding: 0,
-          fontFamily: "Arial, sans-serif",
-        }}
-      >
-        {children}
+    <html>
+      <body style={{ fontFamily: "Arial, sans-serif" }}>
+        <header >
+        </header>
+        <main>{children}</main>
       </body>
     </html>
   );
