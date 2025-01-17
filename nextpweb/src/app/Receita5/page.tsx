@@ -10,7 +10,7 @@ interface Movie {
 }
 
 export default function MovieForm() {
-  const [searchParams, setSearchParams] = useState({ title: "bagdad", type: "" });
+  const [searchParams, setSearchParams] = useState({ title: "", type: "" });
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
 
