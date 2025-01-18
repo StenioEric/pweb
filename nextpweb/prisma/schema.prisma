@@ -1,0 +1,15 @@
+datasource db {
+  provider = "sqlite" // ou outro banco, como PostgreSQL ou MySQL
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Movie {
+  id    String @id @default(cuid())
+  title String
+  year  String
+  poster String
+}
