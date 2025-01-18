@@ -74,26 +74,3 @@ export default function Page() {
     </div>
   );
 }
-
-// import Link from "next/link";
-
-// export default function HomePage() {
-//   return (
-//     <div style={{ textAlign: "center", fontFamily: "Arial, sans-serif" }}>
-//       <h1>Receitas Incríveis</h1>
-//       <p>Escolha uma receita:</p>
-//       <ul style={{ listStyle: "none", padding: 0 }}>
-//         {Array.from({ length: 12 }, (_, index) => (
-//           <li key={index} style={{ margin: "10px 0" }}>
-//             <Link
-//               href={`/Receita${index + 1}`}
-//               style={{ textDecoration: "none", color: "#0070f3" }}
-//             >
-//               Receita {index + 1}
-//             </Link>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
